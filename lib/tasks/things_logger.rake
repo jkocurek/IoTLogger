@@ -15,6 +15,7 @@ namespace :logger_IoT do
       Thread.start(server.accept) do |client|
         response = client.gets
         pp response
+        Room.parse_response(response)
         client.close
       end
     end
