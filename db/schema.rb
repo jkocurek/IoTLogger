@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171207191533) do
+ActiveRecord::Schema.define(version: 20180207204516) do
 
   create_table "rooms", force: :cascade do |t|
+    t.string "name"
+    t.integer "temp"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "high"
+    t.integer "low"
+  end
+
+  create_table "sensors", force: :cascade do |t|
     t.string "name"
     t.integer "temp"
     t.string "status"

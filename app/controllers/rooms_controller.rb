@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-  before_action :set_room, only: [:show, :edit, :update, :destroy]
+  before_action :set_room, only: [:show, :edit, :update, :status, :destroy]
 
   # GET /rooms
   # GET /rooms.json
@@ -59,6 +59,15 @@ class RoomsController < ApplicationController
       format.html { redirect_to rooms_url, notice: 'Room was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def status
+    rooms = Room.all
+
+    @room_status = new Array
+    for rooms.each
+      @room_status.push(Sensor.where('name = response_array[0]').last)
+    end  
   end
 
   private
