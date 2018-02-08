@@ -6,8 +6,8 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Temp</th>
-      <th>Status</th>
+      <th>High</th>
+      <th>Low</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,8 +16,8 @@
     <% @rooms.each do |room| %>
       <tr>
         <td><%= room.name %></td>
-        <td><%= room.temp %></td>
-        <td><%= room.status %></td>
+        <td><%= room.high %></td>
+        <td><%= room.low %></td>
         <td><%= link_to 'Show', room %></td>
         <td><%= link_to 'Edit', edit_room_path(room) %></td>
         <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>

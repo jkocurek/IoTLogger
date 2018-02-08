@@ -8,6 +8,8 @@
       <th>Name</th>
       <th>Temp</th>
       <th>Status</th>
+      <th>High</th>
+      <th>Low</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +20,8 @@
         <td><%= sensor.name %></td>
         <td><%= sensor.temp %></td>
         <td><%= sensor.status %></td>
+        <td><%= sensor.high %></td>
+        <td><%= sensor.low %></td>
         <td><%= link_to 'Show', sensor %></td>
         <td><%= link_to 'Edit', edit_sensor_path(sensor) %></td>
         <td><%= link_to 'Destroy', sensor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
