@@ -15,6 +15,8 @@ class Room < ApplicationRecord
       sensor = new Sensor  
       sensor.name = response_array[0]
       sensor.temp = response_array[1]
+      sensor.high = response_array[2]
+      sensor.low = response_array[3]
       if sensor.temp < room.low
         sensor.status = "Cold"
       elsif sensor.temp > room.low 
