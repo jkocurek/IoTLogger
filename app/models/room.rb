@@ -10,7 +10,7 @@ Pusher.encrypted = true
 class Room < ApplicationRecord
   def parse_response(response)
     response_array = response.split(":")
-    if(Room.exists?(['name = response_array[0]')
+    if(Room.exists?['name = response_array[0]'])
       room = Room.where('name = response_array[0]')
       sensor = new Sensor  
       sensor.name = response_array[0]

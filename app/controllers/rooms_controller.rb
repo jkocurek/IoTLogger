@@ -65,7 +65,7 @@ class RoomsController < ApplicationController
     rooms = Room.all
 
     @room_status = new Array
-    for rooms.each
+    rooms.each do |room|
       @room_status.push(Sensor.where('name = response_array[0]').last)
     end  
   end
