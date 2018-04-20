@@ -12,22 +12,22 @@ class Room < ApplicationRecord
     response_array = response.split(":")
     if(Room.exists?['name = response_array[0]'])
       room = Room.where('name = response_array[0]')
-      sensor = new Sensor  
-      sensor.name = response_array[0]
-      sensor.temp = response_array[1]
-      sensor.high = response_array[2]
-      sensor.low = response_array[3]
-      if sensor.temp < room.low
-        sensor.status = "Cold"
-      elsif sensor.temp > room.low 
-        sensor.status = 'Hot'
-      else 
-        sensor.status = 'Normal'
-      end
-      if sensor.status != 'Normal'
-        Pusher.trigger('my-channel', 'my-event', { message: 'Abnormal Status'})
-      end
-      sensor.save
+      result = new Result  
+      result.name = response_array[0]
+      result.value = response_array[1]
+      result.high = response_array[2]
+      result.low = response_array[3]
+//      if sensor.temp < room.low
+//        sensor.status = "Cold"
+//      elsif sensor.temp > room.low 
+//        sensor.status = 'Hot'
+//      else 
+//        sensor.status = 'Normal'
+//      end
+//      if sensor.status != 'Normal'
+//        Pusher.trigger('my-channel', 'my-event', { message: 'Abnormal Status'})
+//      end
+      result.save
     end
   end
 end
