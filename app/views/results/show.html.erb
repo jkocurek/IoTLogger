@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sensor:</strong>
+  <%= @result.sensor_id %>
+</p>
+
+<p>
+  <strong>High:</strong>
+  <%= @result.high %>
+</p>
+
+<p>
+  <strong>Low:</strong>
+  <%= @result.low %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @result.value %>
+</p>
+
+<%= link_to 'Edit', edit_result_path(@result) %> |
+<%= link_to 'Back', results_path %>

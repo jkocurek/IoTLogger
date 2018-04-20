@@ -16,6 +16,7 @@
 
   <tbody>
     <% @sensors.each do |sensor| %>
+<% puts sensor.high%>
       <tr>
         <td><%= sensor.name %></td>
         <td><%= sensor.temp %></td>
